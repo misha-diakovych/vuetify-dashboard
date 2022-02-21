@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <v-main>
+      <v-container>
+        <h1>Your Progress</h1>
+        <v-row>
+          <v-col cols="3">
+            <circle-progress :progress-value="68" />
+          </v-col>
+          <v-col cols="9">
+            <progress-slider />
+            <progress-table />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CircleProgress from "@/components/CircleProgress";
+import ProgressSlider from "@/components/ProgressSlider";
+import ProgressTable from "@/components/ProgressTable";
 
 export default {
   name: "App",
+
   components: {
-    HelloWorld,
+    ProgressTable,
+    ProgressSlider,
+    CircleProgress,
   },
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
